@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_learning_7_building_ui/calculator_brain.dart';
 import 'package:flutter_learning_7_building_ui/components/icon_content.dart';
 import 'file:///D:/Learning/flutter/flutter-learning/flutter_learning_7_building_ui/lib/screens/results_page.dart';
 import 'file:///D:/Learning/flutter/flutter-learning/flutter_learning_7_building_ui/lib/components/reusable_card.dart';
@@ -184,7 +185,15 @@ class _InputPageState extends State<InputPage> {
             ),
             BottomButton(
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => ResultsPage()));
+                CalculatorBrain calc = new CalculatorBrain(weight: weight, height: height);
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => ResultsPage(
+                              bmiResult: calc.calculateBMI(),
+                              resultText: calc.getResult(),
+                              interpretation: calc.getInterpretation(),
+                            )));
               },
               buttonTitle: 'CALCULATE',
             ),

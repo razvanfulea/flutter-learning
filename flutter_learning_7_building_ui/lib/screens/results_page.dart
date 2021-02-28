@@ -5,6 +5,12 @@ import 'file:///D:/Learning/flutter/flutter-learning/flutter_learning_7_building
 import '../constants.dart';
 
 class ResultsPage extends StatelessWidget {
+  final String bmiResult;
+  final String resultText;
+  final String interpretation;
+
+  ResultsPage({@required this.bmiResult, @required this.resultText, @required this.interpretation});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,10 +34,10 @@ class ResultsPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Text('Normal', style: RESULT_TEXT_STYLE),
-                  Text('18.3', style: BMI_TEXT_STYLE),
+                  Text(resultText.toUpperCase(), style: RESULT_TEXT_STYLE),
+                  Text(bmiResult, style: BMI_TEXT_STYLE),
                   Text(
-                    'Your BMI result is quite low. You should eat more!',
+                    interpretation,
                     textAlign: TextAlign.center,
                     style: BODY_TEXT_STYLE,
                   ),
