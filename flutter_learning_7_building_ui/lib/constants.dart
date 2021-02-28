@@ -10,6 +10,31 @@ const NUMBER_TEXT_STYLE = TextStyle(
   fontWeight: FontWeight.w900,
 );
 
+const LARGE_BUTTON_TEXT_STYLE = TextStyle(
+  fontSize: 25.0,
+  fontWeight: FontWeight.bold,
+);
+
+const RESULT_TEXT_STYLE = TextStyle(
+  color: Color(0xFF24D876),
+  fontSize: 22.0,
+  fontWeight: FontWeight.bold,
+);
+
+const TITLE_TEXT_STYLE = TextStyle(
+  fontSize: 50.0,
+  fontWeight: FontWeight.bold,
+);
+
+const BMI_TEXT_STYLE = TextStyle(
+  fontSize: 100.0,
+  fontWeight: FontWeight.bold,
+);
+
+const BODY_TEXT_STYLE = TextStyle(
+  fontSize: 22.0,
+);
+
 const double BOTTOM_CONTAINER_HEIGHT = 80.0;
 const Color BOTTOM_CONTAINER_COLOR = Color(0xFFEB1555);
 const Color ACTIVE_CARD_COLOR = Color(0xFF1D1E33);

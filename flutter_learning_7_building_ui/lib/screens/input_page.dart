@@ -1,11 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_learning_7_building_ui/results_page.dart';
-import 'package:flutter_learning_7_building_ui/reusable_card.dart';
+import 'package:flutter_learning_7_building_ui/components/icon_content.dart';
+import 'file:///D:/Learning/flutter/flutter-learning/flutter_learning_7_building_ui/lib/screens/results_page.dart';
+import 'file:///D:/Learning/flutter/flutter-learning/flutter_learning_7_building_ui/lib/components/reusable_card.dart';
+import 'file:///D:/Learning/flutter/flutter-learning/flutter_learning_7_building_ui/lib/components/round_icon_button.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import 'constants.dart';
-import 'icon_content.dart';
+import '../components/bottom_button.dart';
+import '../constants.dart';
 
 enum Gender {
   male,
@@ -180,43 +182,13 @@ class _InputPageState extends State<InputPage> {
                 ],
               ),
             ),
-            Container(
-              color: BOTTOM_CONTAINER_COLOR,
-              margin: EdgeInsets.all(8.0),
-              width: double.infinity,
-              height: BOTTOM_CONTAINER_HEIGHT,
-              child: GestureDetector(
-                onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => ResultsPage()));
-                },
-                child: Container(
-                  child: Text('CALCULATE'),
-                ),
-              ),
+            BottomButton(
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => ResultsPage()));
+              },
+              buttonTitle: 'CALCULATE',
             ),
           ],
         ));
-  }
-}
-
-class RoundIconButton extends StatelessWidget {
-  final IconData icon;
-  final Function onPressed;
-
-  RoundIconButton({@required this.icon, @required this.onPressed});
-
-  @override
-  Widget build(BuildContext context) {
-    return RawMaterialButton(
-      onPressed: onPressed,
-      constraints: BoxConstraints.tightFor(
-        width: 56.0,
-        height: 56.0,
-      ),
-      elevation: 6.0,
-      shape: CircleBorder(),
-      fillColor: Color(0xFF4C4F5E),
-      child: Icon(icon),
-    );
   }
 }
